@@ -9,9 +9,6 @@ seeds:
     +database: sandbox_claims
     +schema: cclf
 
-
-## Variables affecting the configuration of this project and the Tuva Project
-## packages are below.
 vars:
 
 #########################################

@@ -18,37 +18,34 @@ select
     , {{ cast_string_or_varchar('NULL') }} as ms_drg_code
     , {{ cast_string_or_varchar('NULL') }} as apr_drg_code
     , {{ cast_string_or_varchar('NULL') }} as revenue_center_code
-    , cast(regexp_substr(clm_line_srvc_unit_qty,'.') as integer) as service_unit_quantity
+    , cast(NULL as integer) as service_unit_quantity
     , {{ cast_string_or_varchar('clm_line_hcpcs_cd') }} as hcpcs_code
-    , {{ cast_string_or_varchar('hcpcs_1_mdfr_cd') }} as hcpcs_modifier_1
-    , {{ cast_string_or_varchar('hcpcs_2_mdfr_cd') }} as hcpcs_modifier_2
-    , {{ cast_string_or_varchar('hcpcs_3_mdfr_cd') }} as hcpcs_modifier_3
-    , {{ cast_string_or_varchar('hcpcs_4_mdfr_cd') }} as hcpcs_modifier_4
-    , {{ cast_string_or_varchar('hcpcs_5_mdfr_cd') }} as hcpcs_modifier_5
-    , {{ cast_string_or_varchar('rndrg_prvdr_npi_num') }} as rendering_npi
-    , {{ cast_string_or_varchar('NULL') }} as billing_npi
+    , {{ cast_string_or_varchar('NULL') }} as hcpcs_modifier_1
+    , {{ cast_string_or_varchar('NULL') }} as hcpcs_modifier_2
+    , {{ cast_string_or_varchar('NULL') }} as hcpcs_modifier_3
+    , {{ cast_string_or_varchar('NULL') }} as hcpcs_modifier_4
+    , {{ cast_string_or_varchar('NULL') }} as hcpcs_modifier_5
+    , {{ cast_string_or_varchar('ordrg_prvdr_npi_num') }} as rendering_npi
+    , {{ cast_string_or_varchar('payto_prvdr_npi_num') }} as billing_npi
     , {{ cast_string_or_varchar('NULL') }} as facility_npi
     , cast(NULL as date) as paid_date
     , {{ cast_numeric('clm_line_cvrd_pd_amt') }} as paid_amount
     , {{ cast_numeric('NULL') }} as total_cost_amount
     , {{ cast_numeric('clm_line_alowd_chrg_amt') }} as allowed_amount
     , {{ cast_numeric('clm_line_alowd_chrg_amt') }} as charge_amount
-    , case
-        when {{ cast_string_or_varchar('dgns_prcdr_icd_ind') }} = '0' then 'icd-10-pcs'
-        when {{ cast_string_or_varchar('dgns_prcdr_icd_ind') }} = '9' then 'icd-9-pcs'
-        else {{ cast_string_or_varchar('dgns_prcdr_icd_ind') }} end as diagnosis_code_type
-    , {{ cast_string_or_varchar('clm_dgns_1_cd') }} as diagnosis_code_1
-    , {{ cast_string_or_varchar('clm_dgns_2_cd') }} as diagnosis_code_2
-    , {{ cast_string_or_varchar('clm_dgns_3_cd') }} as diagnosis_code_3
-    , {{ cast_string_or_varchar('clm_dgns_4_cd') }} as diagnosis_code_4
-    , {{ cast_string_or_varchar('clm_dgns_5_cd') }} as diagnosis_code_5
-    , {{ cast_string_or_varchar('clm_dgns_6_cd') }} as diagnosis_code_6
-    , {{ cast_string_or_varchar('clm_dgns_7_cd') }} as diagnosis_code_7
-    , {{ cast_string_or_varchar('clm_dgns_8_cd') }} as diagnosis_code_8
-    , {{ cast_string_or_varchar('clm_dgns_9_cd') }} as diagnosis_code_9
-    , {{ cast_string_or_varchar('clm_dgns_10_cd') }} as diagnosis_code_10
-    , {{ cast_string_or_varchar('clm_dgns_11_cd') }} as diagnosis_code_11
-    , {{ cast_string_or_varchar('clm_dgns_12_cd') }} as diagnosis_code_12
+    , {{ cast_string_or_varchar('NULL') }} as diagnosis_code_type
+    , {{ cast_string_or_varchar('NULL') }} as diagnosis_code_1
+    , {{ cast_string_or_varchar('NULL') }} as diagnosis_code_2
+    , {{ cast_string_or_varchar('NULL') }} as diagnosis_code_3
+    , {{ cast_string_or_varchar('NULL') }} as diagnosis_code_4
+    , {{ cast_string_or_varchar('NULL') }} as diagnosis_code_5
+    , {{ cast_string_or_varchar('NULL') }} as diagnosis_code_6
+    , {{ cast_string_or_varchar('NULL') }} as diagnosis_code_7
+    , {{ cast_string_or_varchar('NULL') }} as diagnosis_code_8
+    , {{ cast_string_or_varchar('NULL') }} as diagnosis_code_9
+    , {{ cast_string_or_varchar('NULL') }} as diagnosis_code_10
+    , {{ cast_string_or_varchar('NULL') }} as diagnosis_code_11
+    , {{ cast_string_or_varchar('NULL') }} as diagnosis_code_12
     , {{ cast_string_or_varchar('NULL') }} as diagnosis_code_13
     , {{ cast_string_or_varchar('NULL') }} as diagnosis_code_14
     , {{ cast_string_or_varchar('NULL') }} as diagnosis_code_15
@@ -138,5 +135,5 @@ select
     , cast(NULL as date) as procedure_date_23
     , cast(NULL as date) as procedure_date_24
     , cast(NULL as date) as procedure_date_25
-    , '{{ var("data_source")}}' as data_source
-from {{ source('cclf','partb_physicians')}}
+    , 'medicare cclf' as data_source
+from {{ source('medicare_cclf','partb_dme')}}

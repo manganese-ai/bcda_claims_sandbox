@@ -3,5 +3,3 @@ packages:
     version: [">=0.9.2","<1.0.0"]
   - package: tuva-health/the_tuva_project
     version: [">=0.3.0","<1.0.0"]
-  - git: https://github.com/tuva-health/cms_hcc.git
-    warn-unpinned: false
