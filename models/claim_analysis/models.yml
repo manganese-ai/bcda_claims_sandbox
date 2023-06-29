@@ -1,0 +1,9 @@
+version: 2
+
+models:
+
+### core
+  - name: cost_per_hcpcs
+    config:
+      schema: claim_analysis
+      materialized: view
