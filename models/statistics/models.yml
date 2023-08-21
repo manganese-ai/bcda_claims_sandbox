@@ -1,0 +1,7 @@
+version: 2
+
+models:
+  - name: scores_by_state
+    config:
+      schema: statistics
+      
