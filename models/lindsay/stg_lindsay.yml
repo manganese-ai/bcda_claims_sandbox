@@ -1,0 +1,36 @@
+version: 1
+
+models:
+  - name: tmp_combine_stages
+    description: '{{ doc("tmp_combine_stages") }}'
+    columns: 
+      - name: patient_id
+        tests:
+          - unique
+          - not_null
+          # - relationships:
+          #   to: ref('tmp_stg2')
+          #   field: patient_id
+      - name: state
+        tests:
+          - accepted_values:
+              values:
+                - New Jersey
+                - Ohio
+                - New York
+                - Pennsylvania
+                - Illinois
+                - Arizona
+                - California
+                - Texas
+  - name: tmp_stg1
+    description: patients with multiple chronic conditions
+    columns:
+      - name: patient_id
+        description: primary key
+
+  - name: tmp_stg2
+    description: female patients from certain states 
+    columns:
+      - name: patient_id
+        description: primary key

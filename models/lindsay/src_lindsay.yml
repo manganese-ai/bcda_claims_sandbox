@@ -1,0 +1,26 @@
+version: 1
+
+sources:
+  - name: chronic_conditions
+    description: source data for chronic conditions
+    database: SANDBOX_CLAIMS
+    tables:
+      - name: cms_chronic_conditions_wide
+        columns:
+          - name: patient_id
+            description: primary key
+            tests:
+              - unique
+              - not null
+
+  - name: core
+    database: SANDBOX_CLAIMS
+    tables:
+      - name: patient
+      - name: eligibility
+        ### if we want to see when the table was last updated
+        ### `dbt source freshness`
+        # loaded_at_field: _etl_loaded_at
+        #   freshness:
+        #     warn_after: {count: 12, period: hour}
+        #     error_after: {count: 24, period: hour}
