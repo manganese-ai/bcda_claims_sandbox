@@ -14,15 +14,8 @@ models:
       - name: state
         tests:
           - accepted_values:
-              values:
-                - New Jersey
-                - Ohio
-                - New York
-                - Pennsylvania
-                - Illinois
-                - Arizona
-                - California
-                - Texas
+              values: ['New Jersey','Ohio','New York','Pennsylvania','Illinois','Arizona','California','Texas']
+  
   - name: tmp_stg1
     description: patients with multiple chronic conditions
     columns:
