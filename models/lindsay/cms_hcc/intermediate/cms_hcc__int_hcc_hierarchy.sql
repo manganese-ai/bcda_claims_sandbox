@@ -74,11 +74,8 @@ with hcc_mapping as (
 
 )
 
-/*
-    applying hcc hierarchy and grouping by patient and hcc
-    to account for multiple hcc combinations
-    minimum HCC is included following CMS's severity logic
-*/
+-- applying hcc hierarchy and grouping by patient and hcc to account for multiple hcc combinations
+-- the minimum HCC is included following CMS's severity logic
 , hierarchy_applied as (
 
     select
@@ -99,10 +96,8 @@ with hcc_mapping as (
 
 )
 
-/*
-    selecting lower-level hccs in hierarchy
-    all codes in this cte are included in final output
-*/
+-- selecting lower-level hccs in hierarchy
+-- all codes in this cte are included in final output
 , lower_level_inclusions as (
 
     select distinct
@@ -117,10 +112,8 @@ with hcc_mapping as (
 
 )
 
-/*
-    selecting top-level hccs not in previous steps
-    all codes in this cte are included in final output
-*/
+-- selecting top-level hccs not in previous steps
+-- all codes in this cte are included in final output
 , top_level_inclusions as (
 
     select distinct
@@ -142,6 +135,7 @@ with hcc_mapping as (
 
 )
 
+-- combine all patients
 , unioned as (
 
     select * from hccs_without_hierarchy
@@ -152,6 +146,7 @@ with hcc_mapping as (
 
 )
 
+-- cast appropriately
 , add_data_types as (
 
     select
@@ -164,6 +159,7 @@ with hcc_mapping as (
 
 )
 
+-- final select
 select
       patient_id
     , model_version
