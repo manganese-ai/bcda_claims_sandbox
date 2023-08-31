@@ -1,0 +1,23 @@
+# conda env create -f environment.yml
+name: tuva
+channels:
+- conda-forge
+dependencies:
+  - python==3.9.13
+  - jupyter
+  - jupyterlab
+  - seaborn
+  - watermark
+  - numpy==1.22.0
+  - pandas
+  - matplotlib==3.7.1
+  - snowflake-connector-python
+  - snowflake-sqlalchemy
+  - snowflake-connector-python[pandas]
+  - boto3
+  - tomli
+  - s3fs
+  - dask
+  - pip
+  # - pip:
+    # - daft

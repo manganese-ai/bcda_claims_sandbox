@@ -93,7 +93,7 @@ vars:
   # terminology_schema: terminology
   # tuva_chronic_conditions_database: tuva
   # tuva_chronic_conditions_schema: tuva_chronic_conditions
-  cms_hcc_payment_year: 2022
+  cms_hcc_payment_year: 2019
 
 model-paths: ["models"]
 analysis-paths: ["analyses"]
