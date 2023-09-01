@@ -32,7 +32,7 @@ Trying to understand each step of HCC coding.
     - c. Combine coefficient data and patient data for new enrollees
     - d. Combine coefficient data and patient data for continuing enrollees -- same as new enrollees except also including Dual Status and Institutional Status for Continuing (not New)
     - e. Combine coefficient data and patient data for "other" enrollees. 
-    ** Tuva Note: The CMS-HCC model does not have factors for ESRD or null medicare status for these edge-cases, we default to 'Aged' and dual_status is Non or Partial.**
+    **Tuva Note: The CMS-HCC model does not have factors for ESRD or null medicare status for these edge-cases, we default to 'Aged' and dual_status is Non or Partial.**
     - f. Combine all enrollee types together
 4. Get enrollment interaction factors `cms_hcc__int_enrollment_interaction_factors.sql`
     - a. Get patient info from Step #3 above

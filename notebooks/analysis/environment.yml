@@ -1,4 +1,5 @@
 # conda env create -f environment.yml
+# conda env update --file environment.yml --prune
 name: tuva
 channels:
 - conda-forge
@@ -18,6 +19,7 @@ dependencies:
   - tomli
   - s3fs
   - dask
+  - python-dotenv
   - pip
   # - pip:
     # - daft
