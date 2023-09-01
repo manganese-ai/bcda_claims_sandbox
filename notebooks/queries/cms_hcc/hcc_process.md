@@ -50,7 +50,6 @@ Trying to understand each step of HCC coding.
     - g. Add ICD-10 CM codes to each eligible patient claim
 6. Map HCC codes to patient diagnosis (condition) codes `cms_hcc__int_hcc_mapping.sql`
     - a. Pull in data we created in #5 above
-    **Note: This has 0 rows in Snowflake -- I think because of the payment/collection year variables**
     - b. Pull in seed data that maps eligible diagnosis codes to HCC codes
     **Note: Tuva currently only supports CMS HCC v24**
     - c. Add HCC codes to patient data
