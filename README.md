@@ -19,7 +19,7 @@ Run the following
 If applicable: go to `~/.dbt/profiles.yml` and update role
 
 ## Seed
-Claims data is seeded from sample CCLF data available on [syntegra](https://www.syntegra.io/download-syntegra-data)
+Claims data is seeded from sample CCLF data available on [CMS's synthetic data](https://bcda.cms.gov/guide.html#try-the-api)
 Place these files in the seeds/ folder
 
 If the database is empty then you need to run:

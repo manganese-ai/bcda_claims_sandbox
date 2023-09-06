@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "dbt-claims-sandbox"
+name = "bcda-claims-sandbox"
 version = "0.1.0"
 description = ""
 authors = ["lwarrenburg <lindsay.a.warrenburg@gmail.com>"]
@@ -7,7 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-dbt-snowflake = "^1.6.1"
+dbt-snowflake = "^1.6.2"
 
 
 [build-system]
