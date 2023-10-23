@@ -7,3 +7,7 @@ logs/
 docs/
 notebooks/analysis/.env
 notebooks/analysis/__pycache__/
+data/*
+!data/.gitkeep
+__pycache__
+*.local
